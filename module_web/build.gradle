@@ -1,0 +1,45 @@
+apply from: rootProject.file('cc-settings-2.gradle')
+
+android {
+    compileSdkVersion 29
+
+
+    defaultConfig {
+        if (project.ext.runAsApp) {
+            applicationId 'com.ysy.module_web'
+        }
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+    }
+    dataBinding {
+        enabled = true
+    }
+    //指定jdk版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/debug/java']
+            res.srcDirs = ['src/main/res', 'src/main/debug/res']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':common_base')
+
+}

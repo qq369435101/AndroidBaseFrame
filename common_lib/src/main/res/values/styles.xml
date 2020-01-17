@@ -1,0 +1,20 @@
+<resources>
+    <color name="z_transparent">#00000000</color>
+
+    <style name="AppTheme.Base" parent="QMUI.Compat.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/ActivityLeftToRightAnimStyle</item>
+    </style>
+
+    <style name="ActivityLeftToRightAnimStyle" parent="@android:style/Animation.Translucent">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_in_right_to_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_out_left_to_right</item>
+    </style>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_error_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_err"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/load_err" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="加载失败,点击重试"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <!--加载失败-->
+        <LinearLayout
+            android:id="@+id/ll_empty_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lib_img_empty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="这里什么也没有加,点击重试"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <!--加载中..-->
+        <ViewStub
+            android:id="@+id/vs_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inflatedId="@+id/panel_import"
+            android:layout="@layout/layout_loading_view" />
+
+        <ViewStub
+            android:id="@+id/stub_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/common_top_bar" />
+
+    </com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>
+
+</layout>

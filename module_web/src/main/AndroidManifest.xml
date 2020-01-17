@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ysy.module_web" >
+    <application>
+        <activity android:name=".ui.BaseWebviewActivity" />
+    </application>
+</manifest>

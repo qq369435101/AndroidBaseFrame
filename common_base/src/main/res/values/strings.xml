@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">common_base</string>
+    <string name="main_module_name">module_main</string>
+    <string name="user_module_name">module_user</string>
+    <string name="web_module_name">module_web</string>
+</resources>

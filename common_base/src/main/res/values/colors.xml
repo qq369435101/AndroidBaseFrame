@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_theme">#abcdef</color>
+    <color name="color63">#333333</color>
+    <color name="color69">#999999</color>
+    <color name="lib_colorPrimary">#3F51B5</color>
+    <color name="lib_colorPrimaryDark">#303F9F</color>
+    <color name="lib_colorAccent">#FF4081</color>
+    <color name="lib_withe">#FFFFFF</color>
+    <color name="lib_fontRed">#FFF82933</color>
+    <color name="lib_backgroundColor">#FFF2F2F2</color>
+    <color name="lib_fontNormal">#ff333333</color>
+    <color name="lib_fontGrey">#ff999999</color>
+    <color name="lib_fontBlack">#ff222222</color>
+    <color name="lib_divider">#ffdddddd</color>
+    <color name="lib_fontOrange">#FFFF7900</color>
+    <!--页面背景的颜色-->
+    <color name="lib_color_page_bg">#eaedef</color>
+
+    <color name="lib_colorWhite">#ffffffff</color>
+
+    <!--主页tab背景-->
+    <color name="lib_colorTabBg">#ffffffff</color>
+    <color name="lib_colorTabTextCheck">#ffce3d3a</color>
+    <color name="lib_colorTabTextNormal">#585858</color>
+    <color name="lib_colorTabLine">#ffce3d3a</color>
+    <color name="lib_province_line_border">#C7C7C7</color>
+    <!--侧边栏分割线-->
+    <color name="lib_colorNavLine">#E0E0E0</color>
+
+
+    <!--分割线-->
+    <color name="lib_colorLine">#EBEBEB</color>
+    <!--首页分割线-->
+    <color name="lib_colorHomeLine">#fff2f2f2</color>
+
+    <color name="lib_colorLineDeep">#BBBBBB</color>
+
+    <!--item的分割线-->
+    <color name="lib_colorLineItem">#ffe8e8e8</color>
+    <color name="lib_colorHint">#DDDDDD</color>
+    <!--tab标签栏文字的颜色-->
+    <color name="lib_colorTabText">#585858</color>
+    <!--正文文字颜色-->
+    <color name="lib_colorContent">#ff333333</color>
+    <!--水波纹或5.0以下选择器颜色-->
+    <color name="lib_tabBackground">#777D7D7D</color>
+    <!--item的水波纹颜色-->
+    <color name="lib_itemBackground">#DD7D7D7D</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="lib_itemLowBackground">#d9d9d9</color>
+
+    <!--透明色-->
+    <color name="lib_colorTransparent">#00000000</color>
+    <!--半透明-->
+    <color name="lib_colorBanTransparent">#11000000</color>
+    <!--首页item文字颜色-->
+    <color name="lib_colorSubtitle">#999</color>
+
+    <color name="lib_colorTitle">#666</color>
+    <!--谈红色  用于首页调整点击变色-->
+    <color name="lib_colorSmallRed">#faebeb</color>
+
+    <!--电影评分-->
+    <color name="lib_colorRateRed">#FB5B81</color>
+
+    <!--没有水波纹效果的颜色选择器-->
+    <color name="lib_colorItemBackground">#d9d9d9</color>
+
+    <!--选择分类按下颜色-->
+    <color name="lib_colorChoosePress">#DDD</color>
+
+    <!--暂时用于反馈文字-->
+    <color name="lib_text_common">#191919</color>
+
+    <color name="lib_text_deed_bg">#f6f6f6</color>
+    <!--dialog的查看详情键-->
+    <color name="lib_colorBtDialog">#38659C</color>
+    <color name="lib_white">#FFFFFF</color>
+    <color name="lib_black">#000000</color>
+    <color name="lib_gray">#808080</color>
+    <color name="lib_yellow">#FFFF00</color>
+    <color name="lib_green">#008000</color>
+    <color name="lib_blue">#0000FF</color>
+    <color name="lib_orange">#FFA500</color>
+
+    <color name="lib_colorPrimaryHalf">#9003A9F4</color>
+    <color name="lib_colorAccentHalf">#9000E5FF</color>
+    <color name="lib_gray_font_dark">#646464</color>
+    <color name="lib_gray_light">#f2f2f2</color>
+    <color name="lib_appColorPrimary">#FFD022</color>
+    <color name="lib_appColorPrimaryDark">#FFD022</color>
+    <color name="lib_appColorAccent">#FFD022</color>
+</resources>
