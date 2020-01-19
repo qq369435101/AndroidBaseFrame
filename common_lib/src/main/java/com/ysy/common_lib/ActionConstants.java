@@ -6,4 +6,10 @@ package com.ysy.common_lib;
  * Description ：
  */
 public class ActionConstants {
+    //MainComponent
+    public static final String ActionToMain = "toMain";
+
+
+    //WebComponent
+    public static final String ActionToWeb = "toWeb";
 }

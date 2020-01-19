@@ -53,6 +53,7 @@ dependencies {
     api 'com.tencent.bugly:crashreport_upgrade:1.4.0'
     //swipebackhelper侧滑退出
     api 'com.jude:swipebackhelper:3.1.2'
+
     //QMUI
     api 'com.qmuiteam:qmui:1.2.0'
 

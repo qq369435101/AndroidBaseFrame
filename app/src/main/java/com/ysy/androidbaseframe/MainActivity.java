@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.baseframe.R;
-import com.billy.cc.core.component.CC;
-
-
 import com.android.baseframe.databinding.ActivityMainBinding;
+import com.billy.cc.core.component.CC;
 import com.ysy.common_base.base.SwipeBackActivity;
+import com.ysy.common_lib.ActionConstants;
 import com.ysy.common_lib.ComponentConstants;
+import com.ysy.common_lib.PamarsConstants;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends SwipeBackActivity<ActivityMainBinding> {
 
@@ -19,9 +22,24 @@ public class MainActivity extends SwipeBackActivity<ActivityMainBinding> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showContentView();
-        bindingView.toMainComponent.setOnClickListener(v -> CC.obtainBuilder(ComponentConstants.ComponentMain)
-                .setActionName("toMain")
+        initTopBar("MainApp");
+    }
+
+    public void ToHome(View view) {
+        CC.obtainBuilder(ComponentConstants.ComponentMain)
+                .setActionName(ActionConstants.ActionToMain)
                 .build()
-                .call());
+                .call();
+    }
+
+    public void ToWeb(View view) {
+        Map<String, Object> map = new HashMap<>();
+        map.put(PamarsConstants.Web_Url, "https://www.baidu.com");
+        map.put(PamarsConstants.Title, "百度一下");
+        CC.obtainBuilder(ComponentConstants.ComponentWeb)
+                .setActionName(ActionConstants.ActionToWeb)
+                .addParams(map)
+                .build()
+                .call();
     }
 }

@@ -6,4 +6,6 @@ package com.ysy.module_web.ui;
  * Description ：
  */
 public class ConstantWeb {
+
+
 }

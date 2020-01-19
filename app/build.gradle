@@ -25,10 +25,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                output -> outputFileName = "MVVM组件化-${variant.versionName}-${variant.versionCode}.apk"
+            }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     addComponent 'module_main'
+    addComponent 'module_web'
     implementation project(path: ':common_base')
 }

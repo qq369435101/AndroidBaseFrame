@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
-        android:id="@+id/container"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -59,12 +58,17 @@
             android:inflatedId="@+id/panel_import"
             android:layout="@layout/layout_loading_view" />
 
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
         <ViewStub
             android:id="@+id/stub_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/common_top_bar" />
-
+        </LinearLayout>
     </com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>
 
 </layout>

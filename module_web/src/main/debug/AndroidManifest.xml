@@ -3,10 +3,11 @@
     package="com.ysy.module_web">
 
     <application
-        android:name="debug.Application"
+        android:name="debug.WebApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/web_module_name"
+        android:theme="@style/AppTheme"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
 

@@ -6,4 +6,12 @@ package com.ysy.common_lib;
  * Description ：
  */
 public class PamarsConstants {
+    //CommonParams
+    public static final String Title = "title";
+
+
+    //WebComponent Params
+    public static final String Web_Url = "web_url";
+
+
 }

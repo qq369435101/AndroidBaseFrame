@@ -3,7 +3,7 @@
     package="com.ysy.module_user">
 
     <application
-        android:name="debug.Application"
+        android:name="debug.UserApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/user_module_name"

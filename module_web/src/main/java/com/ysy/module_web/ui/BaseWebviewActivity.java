@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import com.billy.cc.core.component.CCUtil;
 import com.ysy.common_base.base.SwipeBackActivity;
+import com.ysy.common_lib.PamarsConstants;
 import com.ysy.module_web.R;
 import com.ysy.module_web.databinding.ActivityWebBaseBinding;
 
@@ -18,5 +20,9 @@ public class BaseWebviewActivity extends SwipeBackActivity<ActivityWebBaseBindin
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_base);
+        String url = CCUtil.getNavigateParam(this, PamarsConstants.Web_Url, null);
+        initTopBar(CCUtil.getNavigateParam(this, PamarsConstants.Title, null));
+        bindingView.webview.loadUrl(url);
+        showContentView();
     }
 }

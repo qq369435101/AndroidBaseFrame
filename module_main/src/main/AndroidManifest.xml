@@ -3,9 +3,7 @@
     package="com.ysy.module_main">
 
     <application>
-        <activity
-            android:name=".HomeActivity"
-           />
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>
