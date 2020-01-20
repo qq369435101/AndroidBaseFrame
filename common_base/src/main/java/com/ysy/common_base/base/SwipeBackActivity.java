@@ -1,10 +1,10 @@
 package com.ysy.common_base.base;
 
 
+import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +36,7 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
     private View loadingView;
     private View emptyView;
     private AnimationDrawable mAnimationDrawable;
-
+    public Activity mActivity;
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         mBaseBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_base, null, false);
@@ -80,6 +80,7 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
         QMUIStatusBarHelper.translucent(this, getResources().getColor(R.color.lib_fontBlack));
         changeStatusTextBarColor(false);
 //        QMUIStatusBarHelper.translucent();
+        mActivity = this;
     }
 
     public void initTopBar(String title) {
@@ -87,12 +88,7 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
             mBaseBinding.stubTop.getViewStub().inflate();
         QMUITopBarLayout bar = mBaseBinding.getRoot().findViewById(R.id.topbar);
         bar.setBackgroundColor(getResources().getColor(R.color.app_theme));
-        bar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        bar.addLeftBackImageButton().setOnClickListener(v -> finish());
         bar.setTitle(title);
     }
 

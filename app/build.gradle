@@ -4,6 +4,7 @@ apply from: rootProject.file('cc-settings-2.gradle')
 android {
     compileSdkVersion 29
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.ysy.androidbaseframe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -38,4 +39,5 @@ dependencies {
     addComponent 'module_main'
     addComponent 'module_web'
     implementation project(path: ':common_base')
+    implementation 'com.android.support:multidex:1.0.3'
 }
