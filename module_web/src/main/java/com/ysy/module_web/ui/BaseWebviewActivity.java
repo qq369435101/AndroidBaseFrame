@@ -1,7 +1,6 @@
 package com.ysy.module_web.ui;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 
@@ -24,12 +23,7 @@ public class BaseWebviewActivity extends SwipeBackActivity<ActivityWebBaseBindin
         setContentView(R.layout.activity_web_base);
         String url = CCUtil.getNavigateParam(this, PamarsConstants.Web_Url, null);
         initTopBar(CCUtil.getNavigateParam(this, PamarsConstants.Title, null));
-        getTopBar().addRightImageButton(R.mipmap.icon_topbar_overflow, R.id.topbar_right_change_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BottomSheetUtils.showShareDialog(v.getContext());
-            }
-        });
+        getTopBar().addRightImageButton(R.mipmap.icon_topbar_overflow, R.id.topbar_right_change_button).setOnClickListener(v -> BottomSheetUtils.showWebDialog(v.getContext()));
         bindingView.webview.loadUrl(url);
         showContentView();
     }
