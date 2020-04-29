@@ -42,4 +42,11 @@ public class MainActivity extends SwipeBackActivity<ActivityMainBinding> {
                 .build()
                 .call();
     }
+
+    public void toLogin(View view){
+        CC.obtainBuilder(ComponentConstants.ComponentUser)
+                .setActionName(ActionConstants.ActionToLogin)
+                .build()
+                .call();
+    }
 }

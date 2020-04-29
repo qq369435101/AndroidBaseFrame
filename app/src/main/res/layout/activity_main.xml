@@ -12,10 +12,10 @@
             android:id="@+id/toMainComponent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="ToHome"
             android:text="ToMain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:onClick="ToHome"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +23,23 @@
             android:id="@+id/to_web"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ToWeb"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/toMainComponent"
-            app:layout_constraintLeft_toLeftOf="parent"
             android:onClick="ToWeb"
-            app:layout_constraintRight_toRightOf="parent" />
+            android:text="ToWeb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toMainComponent" />
 
+        <Button
+            android:id="@+id/toLoginComponent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toLogin"
+            android:text="toLogin"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/to_web"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

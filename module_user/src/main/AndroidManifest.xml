@@ -3,7 +3,9 @@
     package="com.ysy.module_user">
 
     <application>
-        <activity android:name=".ui.UserInfoActivity"></activity>
+        <activity android:name=".ui.UserInfoActivity"/>
+        <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.LoginActivity" />
     </application>
 
 </manifest>

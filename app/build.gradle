@@ -38,6 +38,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     addComponent 'module_main'
     addComponent 'module_web'
+    addComponent 'module_user'
     implementation project(path: ':common_base')
     implementation 'com.android.support:multidex:1.0.3'
 }

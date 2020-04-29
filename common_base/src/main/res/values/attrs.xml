@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SinWaveView">
+        <attr name="wave_upward" format="boolean" />
+        <attr name="wave_speed" format="float" />
+        <attr name="wave_speed_radio" format="float" />
+    </declare-styleable>
+</resources>

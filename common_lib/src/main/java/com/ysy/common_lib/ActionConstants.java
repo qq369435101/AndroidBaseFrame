@@ -12,4 +12,7 @@ public class ActionConstants {
 
     //WebComponent
     public static final String ActionToWeb = "toWeb";
+
+    //UserComponent
+    public static final String ActionToLogin = "toLogin";
 }
