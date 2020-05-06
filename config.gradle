@@ -1,6 +1,14 @@
 ext {
-    minSdkVersion   = 19
-    targetSdkVersion= 28
-    versionCode     = 1
-    versionName     = "1.0"
+    minSdkVersion = 19
+    targetSdkVersion = 28
+    versionCode = 1
+    versionName = "1.0"
+    appName = "AndroidBaseFrame"
+
+    //BaseUrl
+    BASE_URL_DEBUG = '\"http://www.baidu.com\"'
+    BASE_URL_RELEASE = '\"https://www.baidu.com\"'
+    SERVICE_STATE = '\"debug\"'
+    DEBUG_STATE = '\"debug\"'
+    RELEASE_STATE = '\"release\"'
 }

@@ -12,6 +12,21 @@ android {
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file("$rootProject.projectDir/keystore/key.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123321"
+        }
+
+        debug {
+            storeFile file("$rootProject.projectDir/keystore/key.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123321"
+        }
+    }
     dataBinding {
         enabled = true
     }
@@ -24,12 +39,19 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
+
     applicationVariants.all {
         variant ->
             variant.outputs.all {
-                output -> outputFileName = "MVVM组件化-${variant.versionName}-${variant.versionCode}.apk"
+                output -> outputFileName = rootProject.ext.appName + "-${variant.versionName}-${variant.versionCode}.apk"
             }
     }
 }

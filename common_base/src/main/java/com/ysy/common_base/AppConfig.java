@@ -62,26 +62,7 @@ public class AppConfig {
     public static final String serviceTestAddress = "http://jinxiangwangluo.cn/paper/app/";
 
     public static final String ShareUrl="http://jinxiangwangluo.cn/paper/app/downloadApp";
-    /**
-     *
-     * DefaultPageSize
-     */
-    public static final int DefaultPageSize = 10;
 
-    /**
-     * 微信PayWay
-     */
-    public static final String WechatPayWay = "0";
-
-    /**
-     * 华讯PayWay
-     */
-    public static final String HuaXunPayWay = "22";
-
-    /**
-     * 连连PayWay
-     */
-    public static final String LianLianPayWay = "32";
 
 
 

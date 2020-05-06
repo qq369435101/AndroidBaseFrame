@@ -11,6 +11,12 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         multiDexEnabled true
+
+        buildConfigField("String", "BASE_URL_DEBUG", "${rootProject.ext.BASE_URL_DEBUG}")
+        buildConfigField("String", "BASE_URL_RELEASE", "${rootProject.ext.BASE_URL_RELEASE}")
+        buildConfigField("String", "SERVICE_STATE", "${rootProject.ext.SERVICE_STATE}")
+        buildConfigField("String", "DEBUG_STATE", "${rootProject.ext.DEBUG_STATE}")
+        buildConfigField("String", "RELEASE_STATE", "${rootProject.ext.RELEASE_STATE}")
     }
 
     buildTypes {

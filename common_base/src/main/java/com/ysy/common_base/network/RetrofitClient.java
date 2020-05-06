@@ -1,9 +1,7 @@
 package com.ysy.common_base.network;
 
 
-
-
-import com.ysy.common_base.AppConfig;
+import com.ysy.common_base.BuildConfig;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,20 +19,15 @@ public final class RetrofitClient {
     private static final String BASE_URL;
 
 
-
     static {
-        switch (AppConfig.ONLINE_SERVER) {
-            case AppConfig.OTHER: {
-                BASE_URL = AppConfig.serviceAddress;
-
+        switch (BuildConfig.SERVICE_STATE) {
+            case BuildConfig.DEBUG_STATE: {
+                BASE_URL = BuildConfig.BASE_URL_DEBUG;
                 break;
             }
-            case AppConfig.DEBUG:
-                BASE_URL = AppConfig.serviceTestAddress;
-
-                break;
+            case BuildConfig.RELEASE_STATE:
             default:
-                BASE_URL = AppConfig.serviceAddress;
+                BASE_URL = BuildConfig.BASE_URL_RELEASE;
                 break;
         }
     }

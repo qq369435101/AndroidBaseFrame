@@ -1,5 +1,5 @@
 apply from: rootProject.file('cc-settings-2.gradle')
-
+//apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
 
@@ -23,13 +23,28 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    signingConfigs {
+        release {
+            storeFile file("$rootProject.projectDir/keystore/key.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123321"
+        }
+
+        debug {
+            storeFile file("$rootProject.projectDir/keystore/key.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123321"
+        }
+    }
     sourceSets {
         main {
             java.srcDirs = ['src/main/java', 'src/main/debug/java']
-            res.srcDirs =['src/main/res', 'src/main/debug/res']
+            res.srcDirs = ['src/main/res', 'src/main/debug/res']
             if (project.ext.runAsApp) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-            }else{
+            } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
@@ -38,8 +53,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
+
+//    applicationVariants.all {
+//        variant ->
+//            variant.outputs.all {
+//                output -> outputFileName = rootProject.ext.appName + "-${variant.versionName}-${variant.versionCode}.apk"
+//            }
+//    }
 
 }
 
