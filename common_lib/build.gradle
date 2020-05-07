@@ -60,4 +60,10 @@ dependencies {
     //lifecycle
     api 'android.arch.lifecycle:extensions:1.1.1'
     api 'android.arch.lifecycle:reactivestreams:1.1.1'
+
+    //smartRefresh
+    api 'androidx.appcompat:appcompat:1.1.0'                 //必须 1.0.0 以上
+    api  'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
+    api  'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.0'
 }

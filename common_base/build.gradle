@@ -11,7 +11,7 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         multiDexEnabled true
-
+        //配置buildConfig常量
         buildConfigField("String", "BASE_URL_DEBUG", "${rootProject.ext.BASE_URL_DEBUG}")
         buildConfigField("String", "BASE_URL_RELEASE", "${rootProject.ext.BASE_URL_RELEASE}")
         buildConfigField("String", "SERVICE_STATE", "${rootProject.ext.SERVICE_STATE}")

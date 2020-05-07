@@ -1,10 +1,6 @@
 package com.ysy.module_user.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.ysy.common_base.base.SwipeBackActivity;
@@ -22,12 +18,14 @@ public class LoginActivity extends SwipeBackActivity<ActivityLoginBinding> {
         initTopBar();
     }
 
+
     private void initTopBar() {
-        bindingView.include.topbar.addLeftBackImageButton().setOnClickListener(v -> finish());
-        bindingView.include.topbar.setTitle("用户登录").setTextColor(getResources().getColor(R.color.lib_white));
-        bindingView.include.topbar.setBackgroundColor(Color.parseColor("#00ffffff"));
-        bindingView.include.topbar.addLeftBackImageButton().setOnClickListener(v -> finish());
-        Button register = bindingView.include.topbar.addRightTextButton("注册", R.id.topbar_right_text_button);
+        initTopBar("用户登录");
+        getTopBar().addLeftBackImageButton().setOnClickListener(v -> finish());
+        getTopBar().setTitle("用户登录").setTextColor(getResources().getColor(R.color.lib_white));
+        getTopBar().setBackgroundColor(getResources().getColor(R.color.lib_white));
+        getTopBar().addLeftBackImageButton().setOnClickListener(v -> finish());
+        Button register = getTopBar().addRightTextButton("注册", R.id.topbar_right_text_button);
         register.setTextColor(getResources().getColor(R.color.lib_white));
         register.setOnClickListener(v -> ToastUtil.showToast(mActivity, "注册"));
     }

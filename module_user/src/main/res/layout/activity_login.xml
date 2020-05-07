@@ -20,11 +20,6 @@
             app:wave_speed_radio="1.2"
             app:wave_upward="false" />
 
-        <include
-            android:id="@+id/include"
-            layout="@layout/common_top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <com.ysy.common_base.weight.SinWaveView
             android:layout_width="match_parent"
