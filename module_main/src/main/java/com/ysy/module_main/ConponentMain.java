@@ -6,6 +6,7 @@ import com.billy.cc.core.component.CCUtil;
 import com.billy.cc.core.component.IComponent;
 import com.ysy.common_lib.ComponentConstants;
 
+import static com.ysy.common_lib.ActionConstants.ActionToExampleList;
 import static com.ysy.common_lib.ActionConstants.ActionToMain;
 
 /**
@@ -26,6 +27,9 @@ public class ConponentMain implements IComponent {
             case ActionToMain:
                 openMainActivity(cc);
                 break;
+            case ActionToExampleList:
+                openExampleListActivity(cc);
+                break;
             default:
                 break;
         }
@@ -35,6 +39,12 @@ public class ConponentMain implements IComponent {
     private void openMainActivity(CC cc) {
         String url = cc.getParamItem("url");
         CCUtil.navigateTo(cc, HomeActivity.class);
+        CC.sendCCResult(cc.getCallId(), CCResult.success());
+    }
+
+    private void openExampleListActivity(CC cc) {
+        String url = cc.getParamItem("url");
+        CCUtil.navigateTo(cc, ExampleListActivity.class);
         CC.sendCCResult(cc.getCallId(), CCResult.success());
     }
 }

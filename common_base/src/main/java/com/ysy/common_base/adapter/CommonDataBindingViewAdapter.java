@@ -44,9 +44,6 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
     @NonNull
     @Override
     public DataBindingViewHolder<DB> onCreateViewHolder(@NonNull ViewGroup viewGroup, int type) {
-        // 先inflate数据
-//        View itemView = mInflater.inflate(, viewGroup, false);
-        // 返回ViewHolder
         DataBindingViewHolder<DB> holder = new DataBindingViewHolder<>(DataBindingUtil.inflate(((Activity) viewGroup.getContext()).getLayoutInflater(), getLayoutId(type), null, false));
         return holder;
     }
@@ -54,7 +51,7 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
     @Override
     public void onBindViewHolder(@NonNull DataBindingViewHolder<DB> viewHolder, int i) {
         if (mDatas != null && mDatas.size() != 0) {
-            convert(viewHolder, mDatas.get(i));
+            convert(viewHolder.getBindview(), mDatas.get(i));
         } else {
             if (viewHolder.getBindview() instanceof ItemEmptyBinding) {
                 ((ItemEmptyBinding) viewHolder.getBindview()).llEmptyRefresh.setOnClickListener(EmptyClickListener);
@@ -75,7 +72,7 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
      *
      * @param item 当前的数据
      */
-    public abstract void convert(DataBindingViewHolder holder, T item);
+    public abstract void convert(DB dataBinding, T item);
 
     @Override
     public int getItemCount() {
@@ -93,6 +90,10 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
         notifyDataSetChanged();
     }
 
+    public void addData(List<T> t) {
+        mDatas.addAll(t);
+        notifyDataSetChanged();
+    }
     public void clear() {
         mDatas.clear();
     }
@@ -116,11 +117,6 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
     public int getLayoutId(int type) {
         if (type == 0) {
             return R.layout.item_empty;
-//            if (emptyLayoutId == -1) {
-//                return R.layout.item_empty;
-//            } else {
-//                return emptyLayoutId;
-//            }
         }
         return mLayoutId;
     }
@@ -131,7 +127,6 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
             return EMPTY;
         }
         return NO_EMPTY;
-//        return super.getItemViewType(position);
     }
 
     //是否可以展示空页面

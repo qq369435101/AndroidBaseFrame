@@ -6,7 +6,8 @@
         android:layout_height="match_parent">
 
 
-        <TextView
+        <Button
+            android:id="@+id/btnToExample"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -14,7 +15,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center"
-            android:text="Hello World" />
+            android:text="ToExampleList" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
