@@ -4,9 +4,9 @@ package com.ysy.module_main;
 import com.ysy.common_base.adapter.CommonDataBindingViewAdapter;
 import com.ysy.common_base.base.BaseRecycleActivity;
 import com.ysy.common_base.bean.ExampleBean;
-import com.ysy.common_base.viewmodel.MainViewModel;
 import com.ysy.module_main.adapter.ExampleAdapter;
 import com.ysy.module_main.databinding.ItemExampleBinding;
+import com.ysy.module_network.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

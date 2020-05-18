@@ -37,4 +37,5 @@ android {
 
 dependencies {
     api project(path: ':common_lib')
+    api project(path: ':module_network')
 }

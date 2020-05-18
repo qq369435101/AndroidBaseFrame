@@ -1,2 +1,2 @@
-include ':app', ':common_lib', ':common_base', ':module_main', ':module_user', ':module_web'
+include ':app', ':common_lib', ':common_base', ':module_main', ':module_user', ':module_web', ':module_network'
 rootProject.name='AndroidBaseFrame'

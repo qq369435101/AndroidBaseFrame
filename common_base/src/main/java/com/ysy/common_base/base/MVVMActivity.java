@@ -12,7 +12,7 @@ import java.lang.reflect.ParameterizedType;
 /**
  * Created by YuShengyang on 2020/1/16
  * Email       ：18210490506@163.com
- * Description ：
+ * Description ：MVVMActivity
  */
 public class MVVMActivity<SV extends ViewDataBinding, VM extends ViewModel> extends SwipeBackActivity<SV> {
     protected VM mViewModel;
