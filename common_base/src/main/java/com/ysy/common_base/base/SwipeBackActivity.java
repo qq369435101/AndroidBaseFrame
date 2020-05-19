@@ -79,10 +79,13 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
 //        changeStateBar();
         QMUIStatusBarHelper.translucent(this, getResources().getColor(R.color.lib_fontBlack));
         changeStatusTextBarColor(false);
+        initView();
 //        QMUIStatusBarHelper.translucent();
         mActivity = this;
     }
 
+    public void initView() {
+    }
     public void initTopBar(String title) {
         if (!mBaseBinding.stubTop.isInflated())
             mBaseBinding.stubTop.getViewStub().inflate();

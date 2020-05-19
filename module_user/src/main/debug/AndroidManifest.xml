@@ -9,7 +9,8 @@
         android:label="@string/user_module_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".ui.RegisterActivity"></activity>
+        <activity android:name=".ui.FindPasswordActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.UserInfoActivity">
             <intent-filter>

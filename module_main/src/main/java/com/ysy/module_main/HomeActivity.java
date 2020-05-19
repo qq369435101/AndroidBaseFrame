@@ -25,15 +25,12 @@ public class HomeActivity extends SwipeBackActivity<ActivityHomeBinding> {
                 BottomSheetUtils.showShareDialog(v.getContext());
             }
         });
-        bindingView.btnToExample.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        bindingView.btnToExample.setOnClickListener(v -> {
 //                startActivity(new Intent(v.getContext(),ExampleListActivity.class));
-                CC.obtainBuilder(ComponentConstants.ComponentMain)
-                        .setActionName(ActionConstants.ActionToExampleList)
-                        .build()
-                        .call();
-            }
+            CC.obtainBuilder(ComponentConstants.ComponentMain)
+                    .setActionName(ActionConstants.ActionToExampleList)
+                    .build()
+                    .call();
         });
     }
 }

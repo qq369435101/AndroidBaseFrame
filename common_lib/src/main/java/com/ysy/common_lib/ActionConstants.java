@@ -8,8 +8,6 @@ package com.ysy.common_lib;
 public class ActionConstants {
     //MainComponent
     public static final String ActionToMain = "toMain";
-
-    //ExampleListActivity
     public static final String ActionToExampleList = "toExampleList";
 
     //WebComponent
@@ -17,4 +15,5 @@ public class ActionConstants {
 
     //UserComponent
     public static final String ActionToLogin = "toLogin";
+    public static final String ActionToRegister = "toRegister";
 }

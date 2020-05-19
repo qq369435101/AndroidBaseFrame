@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.LoginActivity">
 
+
         <com.ysy.common_base.weight.SinWaveView
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -27,5 +28,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:wave_speed="0.02"
             app:wave_speed_radio="1.3" />
+
+
+        <include
+            android:id="@+id/include_top_bar"
+            layout="@layout/common_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
