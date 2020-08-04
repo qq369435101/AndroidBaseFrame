@@ -27,11 +27,15 @@ public class ExampleListActivity extends BaseRecycleActivity<ExampleBean, MainVi
             for (int i = 0; i < 10; i++) {
                 ExampleBean bean = new ExampleBean();
                 bean.setTv("条目：" + i);
-                bean.setIv(R.mipmap.ic_launcher_round);
+                if (i % 2 == 1) {
+                    bean.setIv(R.mipmap.ic_launcher_round);
+                } else {
+                    bean.setIv(R.mipmap.icon_more_operation_share_weibo);
+                }
                 list.add(bean);
-                finishLoad(true);
             }
             adapter.addData(list);
+            finishLoad(true);
         }, 1000);
     }
 

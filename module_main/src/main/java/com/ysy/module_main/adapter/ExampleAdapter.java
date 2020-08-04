@@ -1,6 +1,7 @@
 package com.ysy.module_main.adapter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.ysy.common_base.adapter.CommonDataBindingViewAdapter;
 import com.ysy.common_base.bean.ExampleBean;
@@ -22,7 +23,9 @@ public class ExampleAdapter extends CommonDataBindingViewAdapter<ExampleBean, It
 
     @Override
     public void convert(ItemExampleBinding dataBinding, ExampleBean item) {
-        dataBinding.tv.setText(item.getTv());
-        dataBinding.iv.setImageResource(item.getIv());
+        Log.e("listLog", "position:" + getmDatas().indexOf(item));
+        dataBinding.setBean(item);
+//        dataBinding.tv.setText(item.getTv());
+//        dataBinding.iv.setImageResource(item.getIv());
     }
 }

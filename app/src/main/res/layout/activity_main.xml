@@ -8,6 +8,14 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:id="@+id/iv_blur"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/lib_fontRed"
+            app:layout_constraintBottom_toTopOf="@+id/toMainComponent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/toMainComponent"
             android:layout_width="wrap_content"
@@ -39,7 +47,6 @@
 
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/to_web"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/to_web" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

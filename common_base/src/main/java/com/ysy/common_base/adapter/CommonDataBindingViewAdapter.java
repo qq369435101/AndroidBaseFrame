@@ -44,8 +44,7 @@ public abstract class CommonDataBindingViewAdapter<T, DB extends ViewDataBinding
     @NonNull
     @Override
     public DataBindingViewHolder<DB> onCreateViewHolder(@NonNull ViewGroup viewGroup, int type) {
-        DataBindingViewHolder<DB> holder = new DataBindingViewHolder<>(DataBindingUtil.inflate(((Activity) viewGroup.getContext()).getLayoutInflater(), getLayoutId(type), null, false));
-        return holder;
+        return new DataBindingViewHolder<>(DataBindingUtil.inflate(((Activity) viewGroup.getContext()).getLayoutInflater(), getLayoutId(type), null, false));
     }
 
     @Override
