@@ -24,9 +24,10 @@ public class ExampleListActivity extends BaseRecycleActivity<ExampleBean, MainVi
         getWindow().getDecorView().postDelayed(() -> {
             showContentView();
             List<ExampleBean> list = new ArrayList<>();
+            int count = adapter.getItemCount();
             for (int i = 0; i < 10; i++) {
                 ExampleBean bean = new ExampleBean();
-                bean.setTv("条目：" + i);
+                bean.setTv("条目：" + (count + i));
                 if (i % 2 == 1) {
                     bean.setIv(R.mipmap.ic_launcher_round);
                 } else {

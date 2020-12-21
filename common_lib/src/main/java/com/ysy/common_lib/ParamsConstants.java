@@ -5,7 +5,7 @@ package com.ysy.common_lib;
  * Email       ：18210490506@163.com
  * Description ：
  */
-public class PamarsConstants {
+public class ParamsConstants {
     //CommonParams
     public static final String Title = "title";
 

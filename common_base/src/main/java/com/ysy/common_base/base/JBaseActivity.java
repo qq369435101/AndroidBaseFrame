@@ -20,7 +20,7 @@ import com.ysy.common_base.utils.WindowUtils;
  * Created by YuShengyang on 2020/1/15
  * Email ：18210490506@163.com
  */
-public class BaseActivity extends AppCompatActivity {
+public class JBaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);

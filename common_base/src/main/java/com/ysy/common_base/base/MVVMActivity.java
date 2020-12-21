@@ -20,6 +20,7 @@ public class MVVMActivity<SV extends ViewDataBinding, VM extends ViewModel> exte
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //TODO:第二个泛型为viewModel若改变泛型位置viewModel会初始化失败
         mViewModel = ViewModelProviders.of(this).get((Class<VM>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
     }
 

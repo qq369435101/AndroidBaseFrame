@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
+        android:id="@+id/base_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

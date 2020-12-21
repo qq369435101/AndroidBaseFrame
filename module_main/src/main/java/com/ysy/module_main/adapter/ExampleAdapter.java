@@ -26,6 +26,6 @@ public class ExampleAdapter extends CommonDataBindingViewAdapter<ExampleBean, It
         Log.e("listLog", "position:" + getmDatas().indexOf(item));
         dataBinding.setBean(item);
 //        dataBinding.tv.setText(item.getTv());
-//        dataBinding.iv.setImageResource(item.getIv());
+        dataBinding.iv.setImageResource(item.getIv());
     }
 }

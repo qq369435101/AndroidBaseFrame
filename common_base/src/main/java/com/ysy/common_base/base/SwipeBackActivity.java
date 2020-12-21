@@ -76,16 +76,15 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
             }
         });
         bindingView.getRoot().setVisibility(View.GONE);
-//        changeStateBar();
         QMUIStatusBarHelper.translucent(this, getResources().getColor(R.color.lib_fontBlack));
         changeStatusTextBarColor(false);
         initView();
-//        QMUIStatusBarHelper.translucent();
         mActivity = this;
     }
 
     public void initView() {
     }
+
     public void initTopBar(String title) {
         if (!mBaseBinding.stubTop.isInflated())
             mBaseBinding.stubTop.getViewStub().inflate();
@@ -95,6 +94,11 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
         bar.setTitle(title);
     }
 
+    /**
+     * 初始化topbar
+     *
+     * @return
+     */
     public QMUITopBarLayout getTopBar() {
         if (!mBaseBinding.stubTop.isInflated())
             mBaseBinding.stubTop.getViewStub().inflate();
@@ -118,11 +122,20 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
         return (T) findViewById(id);
     }
 
-
+    /**
+     * 是否支持侧滑退出
+     *
+     * @return
+     */
     protected boolean isSwipeBackEnable() {
         return true;
     }
 
+    /**
+     * 是否适配刘海屏
+     *
+     * @return
+     */
     protected boolean isChangeStateBar() {
         return true;
     }
@@ -163,7 +176,7 @@ public abstract class SwipeBackActivity<SV extends ViewDataBinding> extends Base
         }
     }
 
-    public void changeStateBar(double ratio) {
+    public void changeStateBar(float ratio) {
         //适配凹口屏
         if (isChangeStateBar()) {
             int result = 0;
