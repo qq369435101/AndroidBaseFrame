@@ -7,7 +7,7 @@ import android.view.View;
 import com.android.baseframe.R;
 import com.android.baseframe.databinding.ActivityMainBinding;
 import com.billy.cc.core.component.CC;
-import com.ysy.common_base.base.SwipeBackActivity;
+import com.ysy.common_base.base.KSwipeBackActivity;
 import com.ysy.common_lib.ActionConstants;
 import com.ysy.common_lib.ComponentConstants;
 import com.ysy.common_lib.ParamsConstants;
@@ -15,7 +15,8 @@ import com.ysy.common_lib.ParamsConstants;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends SwipeBackActivity<ActivityMainBinding> {
+public class MainActivity extends KSwipeBackActivity<ActivityMainBinding> {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

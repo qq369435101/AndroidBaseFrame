@@ -66,4 +66,6 @@ dependencies {
     api  'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
     api  'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
     api  'com.scwang.smart:refresh-layout-kernel:2.0.0'
+
+    api 'com.zackratos.ultimatebarx:ultimatebarx:0.3.3'
 }
