@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:name="com.ysy.androidbaseframe.MyApplication"
         android:theme="@style/AppTheme">
-        <activity android:name="com.ysy.androidbaseframe.MainActivity">
+        <activity android:name="com.ysy.androidbaseframe.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

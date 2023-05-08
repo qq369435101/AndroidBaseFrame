@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
 android {
-    compileSdkVersion 29
+    compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion "29.0.2"
 
 
@@ -26,11 +28,12 @@ android {
         }
     }
     dataBinding {
+        //noinspection DataBindingWithoutKapt
         enabled = true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
 }
@@ -40,7 +43,8 @@ dependencies {
     api project(path: ':module_network')
     api "androidx.core:core-ktx:+"
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
 }
 repositories {
     mavenCentral()

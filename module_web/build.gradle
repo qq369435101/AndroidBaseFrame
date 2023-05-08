@@ -1,7 +1,7 @@
 apply from: rootProject.file('cc-settings-2.gradle')
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
 
     defaultConfig {
@@ -19,8 +19,8 @@ android {
     }
     //指定jdk版本
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     sourceSets {

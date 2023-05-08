@@ -24,38 +24,41 @@ import com.ysy.common_base.listener.PerfectClickListener
  * desc   ：
  */
 open class KSwipeBackActivity<SV : ViewDataBinding>() : BaseActivity() {
-    lateinit var bindingView: SV
+     var bindingView: SV? = null
     lateinit var mAnimationDrawable: AnimationDrawable
-    lateinit var mBaseBinding: ActivityBaseBinding
+     val mBaseBinding: ActivityBaseBinding by lazy {
+         DataBindingUtil.inflate(layoutInflater, R.layout.activity_base, null, false)
+     }
     lateinit var loadingView: View
     override fun setContentView(layoutResID: Int) {
-        mBaseBinding = DataBindingUtil.inflate(layoutInflater, R.layout.activity_base, null, false)
         bindingView = DataBindingUtil.inflate(layoutInflater, layoutResID, null, false);
-        bindingView.root.layoutParams = RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        mBaseBinding.container.addView(bindingView.root)
-        window.setContentView(mBaseBinding.root)
-        loadingView = mBaseBinding.vsLoading.viewStub!!.inflate()
-        mAnimationDrawable = loadingView.findViewById<ImageView>(R.id.img_progress).drawable as AnimationDrawable
-        // 默认进入页面就开启动画
-        if (!mAnimationDrawable.isRunning) {
-            mAnimationDrawable.start()
+        if (bindingView!=null){
+            bindingView?.root?.layoutParams = RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            mBaseBinding.container.addView(bindingView?.root)
+            window.setContentView(mBaseBinding.root)
+            loadingView = mBaseBinding.vsLoading.viewStub!!.inflate()
+            mAnimationDrawable = loadingView.findViewById<ImageView>(R.id.img_progress).drawable as AnimationDrawable
+            // 默认进入页面就开启动画
+            if (!mAnimationDrawable.isRunning) {
+                mAnimationDrawable.start()
+            }
+            // 点击加载失败布局
+            mBaseBinding.llErrorRefresh.setOnClickListener(object : PerfectClickListener() {
+                override fun onNoDoubleClick(v: View?) {
+                    showLoading()
+                    onRefresh()
+                }
+            })
+            mBaseBinding.llEmptyRefresh.setOnClickListener(object : PerfectClickListener() {
+                override fun onNoDoubleClick(v: View?) {
+                    showLoading()
+                    onRefresh()
+                }
+            })
+            bindingView?.root?.visibility = View.GONE
+            QMUIStatusBarHelper.translucent(this, getResColor(R.color.lib_fontBlack))
+            initView()
         }
-        // 点击加载失败布局
-        mBaseBinding.llErrorRefresh.setOnClickListener(object : PerfectClickListener() {
-            override fun onNoDoubleClick(v: View?) {
-                showLoading()
-                onRefresh()
-            }
-        })
-        mBaseBinding.llEmptyRefresh.setOnClickListener(object : PerfectClickListener() {
-            override fun onNoDoubleClick(v: View?) {
-                showLoading()
-                onRefresh()
-            }
-        })
-        bindingView.root.visibility = View.GONE
-        QMUIStatusBarHelper.translucent(this, getResColor(R.color.lib_fontBlack))
-        initView()
     }
 
     open fun initView() {
@@ -184,8 +187,8 @@ open class KSwipeBackActivity<SV : ViewDataBinding>() : BaseActivity() {
         if (!mAnimationDrawable.isRunning) {
             mAnimationDrawable.start()
         }
-        if (bindingView.getRoot().getVisibility() != View.GONE) {
-            bindingView.getRoot().setVisibility(View.GONE)
+        if (bindingView?.getRoot()?.getVisibility() != View.GONE) {
+            bindingView?.getRoot()?.setVisibility(View.GONE)
         }
         if (mBaseBinding.llErrorRefresh.getVisibility() != View.GONE) {
             mBaseBinding.llErrorRefresh.setVisibility(View.GONE)
@@ -209,8 +212,8 @@ open class KSwipeBackActivity<SV : ViewDataBinding>() : BaseActivity() {
         if (mBaseBinding.llEmptyRefresh.getVisibility() != View.GONE) {
             mBaseBinding.llEmptyRefresh.setVisibility(View.GONE)
         }
-        if (bindingView.getRoot().getVisibility() != View.VISIBLE) {
-            bindingView.getRoot().setVisibility(View.VISIBLE)
+        if (bindingView?.getRoot()?.getVisibility() != View.VISIBLE) {
+            bindingView?.getRoot()?.setVisibility(View.VISIBLE)
         }
     }
 
@@ -231,8 +234,8 @@ open class KSwipeBackActivity<SV : ViewDataBinding>() : BaseActivity() {
         if (mBaseBinding.llEmptyRefresh.getVisibility() != View.GONE) {
             mBaseBinding.llEmptyRefresh.setVisibility(View.GONE)
         }
-        if (bindingView.getRoot().getVisibility() != View.GONE) {
-            bindingView.getRoot().setVisibility(View.GONE)
+        if (bindingView?.getRoot()?.getVisibility() != View.GONE) {
+            bindingView?.getRoot()?.setVisibility(View.GONE)
         }
     }
 
@@ -253,8 +256,8 @@ open class KSwipeBackActivity<SV : ViewDataBinding>() : BaseActivity() {
         if (mBaseBinding.llEmptyRefresh.getVisibility() != View.GONE) {
             mBaseBinding.llEmptyRefresh.setVisibility(View.GONE)
         }
-        if (bindingView.getRoot().getVisibility() != View.GONE) {
-            bindingView.getRoot().setVisibility(View.GONE)
+        if (bindingView?.getRoot()?.getVisibility() != View.GONE) {
+            bindingView?.getRoot()?.setVisibility(View.GONE)
         }
     }
 

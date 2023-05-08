@@ -1,6 +1,7 @@
 ext {
+    compileSdkVersion = 33
     minSdkVersion = 19
-    targetSdkVersion = 28
+    targetSdkVersion = 33
     //根据时间来生成versionCode，以免造成未code忘修改无法覆盖安装
     def nowCal = Calendar.instance
     versionCode = nowCal[Calendar.YEAR] * 10000 + (nowCal[Calendar.MONTH] + 1) * 100 + nowCal[Calendar.DATE]

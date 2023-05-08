@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/iv_blur"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/lib_fontRed"
+            app:layout_constraintBottom_toTopOf="@+id/toMainComponent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/toMainComponent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ToHome"
+            android:text="ToMain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/to_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="ToWeb"
+            android:text="ToWeb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toMainComponent" />
+
+        <Button
+            android:id="@+id/toLoginComponent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toLogin"
+            android:text="toLogin"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/to_web" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

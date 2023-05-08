@@ -12,7 +12,8 @@
         <activity android:name=".ui.FindPasswordActivity"></activity>
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.UserInfoActivity">
+        <activity android:name=".ui.UserInfoActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
